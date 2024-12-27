@@ -1,5 +1,5 @@
-Flask==3.0.0
-    python-dotenv==1.0.0
-    requests==2.31.0
-    python-telegram-bot==13.15
-    itsdangerous==2.1.2
+Flask==2.3.2
+python-telegram-bot==20.3
+hubspot-api-client==8.0.0
+Flask-Babel==3.1.0
+python-dotenv==1.0.0

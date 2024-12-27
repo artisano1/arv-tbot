@@ -1,5 +1,10 @@
 from flask import Flask
+from .routes import main
+from .bot.telegram_bot import start_bot
 
-app = Flask(__name__)
-
-from app import routes  # Import routes after app is created
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object("config.Config")
+    app.register_blueprint(main)
+    start_bot()  # Start the Telegram bot
+    return app

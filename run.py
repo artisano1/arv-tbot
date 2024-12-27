@@ -1,5 +1,6 @@
-# run.py
-from app import app
+from app import create_app
 
-if __name__ == '__main__':  # No extra indentation here
-    app.run()
+app = create_app()
+
+if __name__ == "__main__":
+    app.run(debug=True)

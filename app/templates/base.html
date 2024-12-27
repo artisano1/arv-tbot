@@ -1,27 +1,20 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Arvea Elite</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    </head>
-    <body>
-        <nav>
-            <a href="{{ url_for('landing') }}">Home</a>
-            {% if session.get('user_id') %}
-                {% if session.get('role') == 'admin' %}
-                    <a href="{{ url_for('admin_dashboard') }}">Admin Dashboard</a>
-                {% elif session.get('role') == 'distributor' %}
-                    <a href="{{ url_for('distributor_dashboard') }}">Distributor Dashboard</a>
-                {% endif %}
-                <a href="{{ url_for('logout') }}">Logout</a>
-            {% else %}
-                <a href="{{ url_for('login') }}">Login</a>
-            {% endif %}
-        </nav>
-        <div class="container">
-            {% block content %}{% endblock %}
-        </div>
-    </body>
-    </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arvea Elite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Arvea Elite</h1>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Arvea Elite</p>
+    </footer>
+</body>
+</html>
